@@ -56,6 +56,12 @@ public class Application {
     }
 
     private static void pay(POS pos) {
+        final List<Table> tables = pos.tables();
+        List<Boolean> orderStatus = pos.getOrderStatus();
+        OutputView.printTables(tables, orderStatus);
+
+        final int tableNumber = InputView.inputTableNumber();
+
 
     }
 }

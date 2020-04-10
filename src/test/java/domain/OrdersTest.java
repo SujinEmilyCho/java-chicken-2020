@@ -18,4 +18,18 @@ class OrdersTest {
         boolean ordered = orders.hasOrders();
         assertThat(ordered).isTrue();
     }
+
+    @DisplayName("전체 금액 계산 기능 테스트")
+    @Test
+    void name2() {
+        Orders orders = new Orders();
+        orders.addOrder(1, 2);      // 메뉴1: 후라이드 치킨 16000원
+        orders.addOrder(2, 3);      //메뉴2: 양념 치킨 16000원
+
+        int actual = orders.totalPrice();
+
+        int expected = 16000 * 2 + 16000 * 3;
+
+        assertThat(actual).isEqualTo(expected);
+    }
 }

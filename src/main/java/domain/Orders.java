@@ -13,4 +13,10 @@ public class Orders {
     public boolean hasOrders() {
         return orders.size() != 0;
     }
+
+    public int totalPrice() {
+        return orders.stream()
+                .mapToInt(Order::price)
+                .sum();
+    }
 }
