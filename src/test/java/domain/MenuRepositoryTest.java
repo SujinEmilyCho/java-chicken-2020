@@ -5,7 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static domain.MenuRepository.INVALID_MENU_ERR_MSG;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class MenuRepositoryTest {
 
@@ -19,5 +21,14 @@ class MenuRepositoryTest {
         Menu expected = menus.get(0);
 
         assertThat(actual).isEqualTo(expected);
+    }
+
+    @DisplayName("예외 테스트: 입력 받은 번호의 메뉴가 존재하지 않는 경우")
+    @Test
+    void name2() {
+        int menuNumber = 50;
+        assertThatThrownBy(() -> MenuRepository.findMenuByNumber(menuNumber))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(INVALID_MENU_ERR_MSG);
     }
 }
