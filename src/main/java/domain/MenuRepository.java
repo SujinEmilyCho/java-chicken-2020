@@ -21,4 +21,9 @@ public class MenuRepository {
     public static List<Menu> menus() {
         return Collections.unmodifiableList(menus);
     }
+
+
+    public static Menu findMenuByNumber(int menuNumber) {
+        return menus().get(menuNumber - 1);
+    }
 }
