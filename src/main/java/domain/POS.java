@@ -1,5 +1,8 @@
 package domain;
 
+import domain.storeInfo.Table;
+import domain.storeInfo.TableRepository;
+
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +29,12 @@ public class POS {
                 .sorted(Comparator.comparing(Table::getNumber))
                 .map(tableOrders::get)
                 .map(Orders::hasOrders)
+                .collect(Collectors.toList());
+    }
+
+    public List<Table> tables() {
+        return tableOrders.keySet().stream()
+                .sorted(Comparator.comparing(Table::getNumber))
                 .collect(Collectors.toList());
     }
 }

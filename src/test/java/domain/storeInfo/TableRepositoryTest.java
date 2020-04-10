@@ -1,9 +1,9 @@
-package domain;
+package domain.storeInfo;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static domain.TableRepository.INVALID_TABLE_NUMBER_ERR_MSG;
+import static domain.storeInfo.TableRepository.INVALID_TABLE_NUMBER_ERR_MSG;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 

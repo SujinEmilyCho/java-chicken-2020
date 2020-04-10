@@ -1,11 +1,11 @@
-package domain;
+package domain.storeInfo;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static domain.MenuRepository.INVALID_MENU_ERR_MSG;
+import static domain.storeInfo.MenuRepository.INVALID_MENU_ERR_MSG;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 

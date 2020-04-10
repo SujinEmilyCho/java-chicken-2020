@@ -1,5 +1,8 @@
 package domain;
 
+import domain.storeInfo.Menu;
+import domain.storeInfo.MenuRepository;
+
 public class Order {
     static final String INVALID_QUANTITY_ERR_MSG = "한 메뉴는 최대 99개 까지 주문할 수 있습니다.";
 

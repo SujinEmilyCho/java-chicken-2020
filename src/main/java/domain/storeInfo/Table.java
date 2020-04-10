@@ -1,4 +1,4 @@
-package domain;
+package domain.storeInfo;
 
 import java.util.Objects;
 
