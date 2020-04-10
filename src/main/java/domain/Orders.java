@@ -9,4 +9,8 @@ public class Orders {
     public void addOrder(int menu, int quantity) {
         orders.add(new Order(menu, quantity));
     }
+
+    public boolean hasOrders() {
+        return orders.size() != 0;
+    }
 }
