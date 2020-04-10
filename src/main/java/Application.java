@@ -62,6 +62,12 @@ public class Application {
 
         final int tableNumber = InputView.inputTableNumber();
 
+        final int payMethod = InputView.inputPayMethod(tableNumber);
 
+        double price = pos.calculatePrice(tableNumber, payMethod);
+
+        OutputView.printTotalPrice(price);
+
+        pos.pay(tableNumber);
     }
 }

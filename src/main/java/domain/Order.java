@@ -24,4 +24,8 @@ public class Order {
     public boolean isChicken() {
         return menu.isChicken();
     }
+
+    public int getQuantity() {
+        return this.quantity;
+    }
 }

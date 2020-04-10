@@ -32,4 +32,16 @@ class OrdersTest {
 
         assertThat(actual).isEqualTo(expected);
     }
+
+    @DisplayName("주문한 치킨 수량 계산 기능 테스트")
+    @Test
+    void name3() {
+        Orders orders = new Orders();
+        orders.addOrder(1, 3);      // 메뉴1: 후라이드 치킨 16000원
+        orders.addOrder(2, 6);      // 메뉴2: 양념치킨
+        orders.addOrder(21, 10);    // 메뉴3: 콜라
+
+        int chickenCounts = orders.countChickens();
+        assertThat(chickenCounts).isEqualTo(9);
+    }
 }

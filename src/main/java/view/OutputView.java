@@ -1,5 +1,6 @@
 package view;
 
+import domain.Bill;
 import domain.storeInfo.Menu;
 import domain.storeInfo.Table;
 
@@ -56,6 +57,19 @@ public class OutputView {
     public static void printMenus(final List<Menu> menus) {
         for (final Menu menu : menus) {
             System.out.println(menu);
+        }
+    }
+
+    public static void printTotalPrice(double totalPrice) {
+        System.out.println("## 최종 결제할 금액");
+        System.out.println(totalPrice + "원");
+    }
+
+    public static void printOrders(List<Bill> bills) {
+        System.out.println("## 주문 내역");
+        System.out.println("메뉴 수량 금액");
+        for (Bill bill : bills) {
+            System.out.println(String.format("%s, %d, %d", bill.getMenu(), bill.getQuantity(), bill.getPrice()));
         }
     }
 }

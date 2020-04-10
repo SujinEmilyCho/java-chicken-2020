@@ -19,4 +19,11 @@ public class Orders {
                 .mapToInt(Order::price)
                 .sum();
     }
+
+    public int countChickens() {
+        return orders.stream()
+                .filter(Order::isChicken)
+                .mapToInt(Order::getQuantity)
+                .sum();
+    }
 }
