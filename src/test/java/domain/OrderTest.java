@@ -2,6 +2,8 @@ package domain;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static domain.Order.INVALID_QUANTITY_ERR_MSG;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -24,6 +26,12 @@ class OrderTest {
         assertThat(price).isEqualTo(16000 * 2);
     }
 
-
-
+    @DisplayName("주문한 메뉴가 치킨인지 확인하는 기능 테스트")
+    @ParameterizedTest
+    @CsvSource(value = {"1,true", "21,false"})
+    void name3(int menu, boolean expected) {
+        Order order = new Order(menu, 1);   // 메뉴1: 후라이드 치킨, 메뉴21: 콜라
+        boolean actual = order.isChicken();
+        assertThat(actual).isEqualTo(expected);
+    }
 }

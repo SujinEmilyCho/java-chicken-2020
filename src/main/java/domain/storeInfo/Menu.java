@@ -2,6 +2,8 @@ package domain.storeInfo;
 
 import java.util.Objects;
 
+import static domain.storeInfo.Category.CHICKEN;
+
 public class Menu {
     private final int number;
     private final String name;
@@ -17,6 +19,10 @@ public class Menu {
 
     public boolean is(int menuNumber) {
         return this.number == menuNumber;
+    }
+
+    public boolean isChicken() {
+        return this.category == CHICKEN;
     }
 
     public int getPrice() {
